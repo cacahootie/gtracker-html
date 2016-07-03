@@ -4,5 +4,8 @@
     },
     "/view":{
         "template":"view.html"
+    },
+    "/map":{
+        "template":"map.html"
     }
 }
