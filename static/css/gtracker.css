@@ -38,3 +38,8 @@ div.active {
 div.loading {
     background: blue;
 }
+
+#mapid {
+    height: 400px;
+    width: 400px;
+}
