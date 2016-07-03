@@ -52,7 +52,7 @@ var rows = get_rows(),
 
 var map = L.map(
     'map', {}
-).setView([36, 139],4);
+);
 
 L.tileLayer(
     'https://otile1-s.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png'
@@ -100,6 +100,7 @@ function add_items (items) {
     try {
         map.removeLayer(display_layer);
     } catch (e) {  }
+    map.setView([items[0].lat, items[0].lng],4)
     display_layer = L.layerGroup()
     
     items.forEach(function(d) {
