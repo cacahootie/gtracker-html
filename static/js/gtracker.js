@@ -96,7 +96,7 @@ gtracker.test_download = function test_download (record) {
     var request = window.superagent
     var start = new Date().getTime()
     request
-        .get('https://cdn.rawgit.com/cacahootie/gtracker-html/v0.0.1/static/img/download.jpg')
+        .get('https://gtracker.slothattax.me/static/img/download.jpg')
         .end(function(err, res) {
             if (err) return console.log(err)
             var mbps = gtracker.calc_speed(start, res.text.length)
@@ -117,7 +117,7 @@ gtracker.test_upload = function test_upload (record) {
         uploadData[i] = Math.floor(Math.random() * 256)
     }
     request
-        .post('https://cdn.rawgit.com/cacahootie/gtracker-html/v0.0.1/static/img/download.jpg')
+        .post('https://gtracker.slothattax.me/static/img/download.jpg')
         .send(uploadData)
         .end(function(err, res) {
             var mbps = gtracker.calc_speed(start, uploadData.length)
@@ -134,7 +134,7 @@ gtracker.test_ping = function test_ping (record) {
     var request = window.superagent
     var start = new Date().getTime()
     request
-        .get('/permanentfile')
+        .get('https://gtracker.slothattax.me/permanentfile')
         .end(function(err, res) {
             record.ping = new Date().getTime() - start
             $('ping')
