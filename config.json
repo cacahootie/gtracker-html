@@ -1,0 +1,8 @@
+{
+    "/track":{
+        "template":"track.html"
+    },
+    "/view":{
+        "template":"view.html"
+    }
+}
