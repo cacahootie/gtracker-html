@@ -90,7 +90,7 @@ function add_rows (rows) {
     try {
         map.removeLayer(display_layer);
     } catch (e) {  }
-    display_layer = L.markerClusterGroup()
+    display_layer = L.layerGroup()
     
     rows.forEach(function(d) {
         add_point(d, display_layer)
