@@ -29,15 +29,7 @@
     <body>
         <div id="map"></div>
         <script type="text/html" id="item_template">
-            <li><strong>Observation Time:</strong> {{ obstime }}
-                <ul>
-                    <li><strong>Latitude:</strong> {{ lat }}</li>
-                    <li><strong>Longitude:</strong> {{ lng }}</li>
-                    <li><strong>Download:</strong> {{ download }}</li>
-                    <li><strong>Upload:</strong> {{ upload }}</li>
-                    <li><strong>Ping:</strong> {{ ping }}</li>
-                </ul>
-            </li>
+            {% include "item_template.html" %}
         </script>
         <script type="text/javascript" src="https://rawgit.com/cacahootie/gtracker-html/master/static/js/gtracker_map.js"></script>
     </body>
