@@ -30,7 +30,7 @@ function add_point(item, display_layer) {
             weight: 2,
             fillOpacity: 0.5,
         },
-        label = '<div>' + item.obstime + '</div><div>' + item.download + '</div>'
+        label = nunjucks.renderString(item_template, item)
         mk = L.circleMarker([item.lat, item.lng], default_style)
             .addTo(display_layer);
     
