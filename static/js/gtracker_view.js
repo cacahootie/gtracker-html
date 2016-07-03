@@ -19,6 +19,7 @@ function get_items() {
         item.obstime = Date.parse(item.obstime)
         items.push(item)
     })
+    return items
 }
 
 var rows = get_rows(),
