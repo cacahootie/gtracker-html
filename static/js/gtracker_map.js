@@ -42,21 +42,7 @@ function add_point(item, display_layer) {
     )
         .on('mouseover', function show_tooltip () { this.openPopup(); })
         .on('mouseout', function hide_tooltip () { this.closePopup(); })
-        .on('click', function map_click (e) {
-            this.openPopup()
-            try {
-                self.last_marker.setStyle(default_style)
-            } catch (e) {}
-            e.target.setStyle({
-                color: 'orange',
-                fillColor: 'green',
-                radius: 15,
-                weight: 2,
-                fillOpacity: 0.5
-            });
-            self.last_marker = e.target;
-            router.navigate('photos/' + item.id, true);
-        });
+        .on('click', function show_tooltip () { this.openPopup(); })
 
     return mk;
 }
