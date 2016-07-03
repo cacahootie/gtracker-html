@@ -12,6 +12,15 @@ function get_rows() {
     return rows
 }
 
+function get_items() {
+    var items = []
+    Object.keys(localStorage).sort().forEach(function(d) {
+        var item = JSON.parse(localStorage[d])
+        item.obstime = Date.parse(item.obstime)
+        items.push(item)
+    })
+}
+
 var rows = get_rows(),
     chart = c3.generate({
         bindto: '#chart',
@@ -37,7 +46,7 @@ var rows = get_rows(),
     chart.load({
         rows: rows
     })
-    add_rows(rows)
+    add_items(get_items())
 })
 
 var map = L.map(
@@ -86,7 +95,7 @@ function add_point(item, display_layer) {
     return mk;
 }
 
-function add_rows (rows) {
+function add_items (items) {
     try {
         map.removeLayer(display_layer);
     } catch (e) {  }
@@ -99,4 +108,4 @@ function add_rows (rows) {
     display_layer.addTo(map);
 }
 
-add_rows(rows)
+add_items(get_items())
