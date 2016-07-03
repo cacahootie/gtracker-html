@@ -23,9 +23,9 @@ L.tileLayer(
 
 function add_point(item, display_layer) {
     var fillColor
-    if (item.ping < 100) fillColor = 'green';
-    else if (item.ping < 500) fillColor = 'yellow';
-    else if (item.ping < 1000) fillColor = 'orange';
+    if (item.ping < 50) fillColor = 'green';
+    else if (item.ping < 100) fillColor = 'yellow';
+    else if (item.ping < 500) fillColor = 'orange';
     else fillColor = 'red';
     var default_style = {
             color: 'red',
