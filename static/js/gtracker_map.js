@@ -4,7 +4,6 @@ function get_items() {
     var items = []
     Object.keys(localStorage).sort().forEach(function(d) {
         var item = JSON.parse(localStorage[d])
-        item.obstime = Date.parse(item.obstime)
         items.push(item)
     })
     return items
@@ -23,9 +22,14 @@ L.tileLayer(
 ).addTo(map)
 
 function add_point(item, display_layer) {
+    var fillColor
+    if (item.ping < 100) fillColor = 'green';
+    else if (item.ping < 500) fillColor = 'yellow';
+    else if (item.ping < 1000) fillColor = 'orange';
+    else fillColor = 'red';
     var default_style = {
             color: 'red',
-            fillColor: 'blue',
+            fillColor: fillColor,
             radius: 10,
             weight: 2,
             fillOpacity: 0.5,
