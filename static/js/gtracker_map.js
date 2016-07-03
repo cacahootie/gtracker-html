@@ -30,7 +30,7 @@ function add_point(item, display_layer) {
             weight: 2,
             fillOpacity: 0.5,
         },
-        label = '<span>' + item.obstime + '</span>'
+        label = '<div>' + item.obstime + '</div><div>' + item.download + '</div>'
         mk = L.circleMarker([item.lat, item.lng], default_style)
             .addTo(display_layer);
     
@@ -43,6 +43,7 @@ function add_point(item, display_layer) {
         .on('mouseover', function show_tooltip () { this.openPopup(); })
         .on('mouseout', function hide_tooltip () { this.closePopup(); })
         .on('click', function map_click (e) {
+            this.openPopup()
             try {
                 self.last_marker.setStyle(default_style)
             } catch (e) {}
