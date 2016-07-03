@@ -101,7 +101,7 @@ function add_items (items) {
     } catch (e) {  }
     display_layer = L.layerGroup()
     
-    rows.forEach(function(d) {
+    items.forEach(function(d) {
         add_point(d, display_layer)
     })
     
