@@ -8,6 +8,12 @@
     "/map":{
         "template":"map.html"
     },
+    "/chart":{
+        "template":"chart.html"
+    },
+    "/settings":{
+        "template":"settings.html"
+    },
     "/index":{
         "template":"index.html"
     }
