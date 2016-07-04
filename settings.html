@@ -29,8 +29,15 @@
     <body>
         <div class="main">
             <h1>Gonna set me some settings</h1>
-            <input id="delay" type="range" min="10" max="6000" value="30">
-            <button id="buttybutt">Reset</button>
+            <div>
+                <input id="delay" type="range" min="10" max="6000" value="30">
+            </div>
+            <div>
+                <button id="buttybutt">Reset</button>
+            </div>
         </div>
+        <script type="text/javascript">
+            {% include "static/js/gtracker_settings.js" %}
+        </script>
     </body>
 </html>
