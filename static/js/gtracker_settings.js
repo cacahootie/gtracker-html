@@ -3,5 +3,5 @@ $('#buttybutt').on('click', function(e) {
 })
 
 $('#delay').on('change', function(e){
-    console.log(e)
+    $('delayvalue').text(e.target.value)
 })
